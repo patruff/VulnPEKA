@@ -1,0 +1,673 @@
+Business UNIT,IP,DNS,NetBIOS,Tracking Method,OS,IP Status,QID,Title,Vuln Status,Type,Severity,Port,Protocol,FQDN,SSL,First Detected,Last Detected,Times Detected,Date Last Fixed,CVE ID,Vendor Reference,Bugtraq ID,Threat,Impact,Solution,Exploitability,Associated Malware,Results,PCI Vuln,Ticket State,Instance,Category
+BU - 1 - abc.acme.com,192.168.115.125,COMPUTER166xyz.acme.com,,IP,Cisco IOS 11-15,"host scanned, found vuln",38304,SSH Protocol Version 1 Supported,New,Vuln,4,22,tcp,,,2/13/2014 8:26,2/13/2014 8:26,1,,CVE-2001-1473,,,"SSH1 protocol was deprecated due to multiple vulnerabilities and design flaws.
+Among multiple vulnerabilities that exist in SSH protocol Version 1 are:
+ 
+ a CRC32 compensation attack detector vulnerability (buffer overflow)
+ an unauthorized session key recovery problem
+ 
+Multiple vendors' implementations are vulnerable due to the fact that these are protocol design errors. Version 2 of the SSH protocol fixed these errors.
+ 
+Please refer to the following URL for more information:
+ 
+http://www.kb.cert.org/vuls/id/684820 (http://www.kb.cert.org/vuls/id/684820)","The consequences of vulnerabilities present in SSH Version 1 include:
+ 
+ SSH protected traffic compromise
+ root shell access to the system running SSH server","Disable SSH1 support. See your vendor's Web site for information on how to disable SSH protocol Version 1 support. Some references are provided below: 
+SSH Communications Security (http://www.ssh.com) 
+F-Secure (http://www.f-secure.com) 
+OpenSSH (http://www.openssh.org)
+ 
+ Note:  Do not enable SSH Version 1 Fallback since systems with upgraded versions of SSH and with Fallback Version 1 enabled are still vulnerable.",,,"SSH1 supported	yes
+Supported authentications for SSH1	password
+Supported ciphers for SSH1	des,3des#",yes,,,General remote services
+BU - 1 - abc.acme.com,192.168.23.137,COMPUTER408xyz.acme.com,,IP,Windows Vista / Windows 2008,"host scanned, found vuln",105459,EOL/Obsolete Software: SNMP Protocol Version Detected,New,Vuln,5,,,,,2/13/2014 8:00,2/13/2014 8:00,1,,,,,"Simple Network Management Protocol (SNMP) is an ""Internet-standard protocol for managing devices on IP networks.""  
+The authentication of clients of earlier versions of SNMP is performed only by a ""community string"", in effect a type of password, which is transmitted in cleartext. 
+The Internet Engineering Task Force (IETF) has designated SNMPv3 a full Internet standard, the highest maturity level for an RFC. It considers earlier versions to be obsolete designating them (""Historic""). (http://www.ietf.org/rfc/rfc3410.txt)","The system is at high risk of being exposed to security vulnerabilities. Since the vendor no longer provides updates, obsolete software is more vulnerable to viruses and other attacks.","Disable or remove SNMPv1/2c authentication. Use SNMP version 3 authentication 
+SNMPv3 provides additional security features: 
+Confidentiality - Encryption of packets to prevent snooping by an unauthorized source. 
+Integrity - Message integrity to ensure that a packet has not been tampered with in transit including an optional packet replay protection mechanism. 
+Authentication - to verify that the message is from a valid source.  
+For IBM AIX users the following document is recommended  SNMP for network management (http://www-01.ibm.com/support/knowledgecenter/ssw_aix_71/com.ibm.aix.networkcomm/snmp_intro.htm) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workaround: 
+ 
+As a temporary measure, block access to SNMP services at the network perimeter.  
+In situations where blocking or disabling SNMP is not possible,restrict all SNMP access to separate, isolated management networks that are not publicly accessible.",,,public allows SNMPv1 access which is an obsolete version.#,yes,,,Security Policy
+BU - 1 - abc.acme.com,192.168.71.24,COMPUTER292xyz.acme.com,,IP,Windows Vista / Windows 2008,"host scanned, found vuln",43435,Cisco IOS OpenSSL Multiple Vulnerabilities (cisco-sa-20150310-ssl),New,Vuln,4,,,,,2/13/2014 8:00,2/13/2014 8:00,1,,"CVE-2014-3571, CVE-2015-0206, CVE-2014-3569, CVE-2014-3572, CVE-2015-0204, CVE-2015-0205, CVE-2014-8275, CVE-2014-3570",cisco-sa-20150310-ssl,"71934, 71939, 71937, 71942, 91787, 71935, 71936, 71941, 71940","Multiple Cisco products incorporate a version of the OpenSSL package affected by one or more of the following vulnerabilities:-  
+OpenSSL DTLS Message Processing Denial of Service Vulnerability 
+OpenSSL dtls1_buffer_record Function DTLS Message Processing Denial of Service Vulnerability 
+OpenSSL no-ssl3 Option NULL Pointer Dereference Vulnerability 
+OpenSSL Elliptic Curve Cryptographic Downgrade Vulnerability 
+OpenSSL RSA Temporary Key Cryptographic Downgrade Vulnerability 
+OpenSSL Diffie-Hellman Certificate Validation Authentication Bypass Vulnerability 
+OpenSSL Certificate Fingerprint Validation Vulnerability 
+OpenSSL BN_sql Function Incorrect Mathematical Results Issue",Successful exploitation of these vulnerabilities could allow an attacker to perform a man-in-the-middle (MitM) attack or cause a denial of service condition.,"The vendor has released fixes to resolve this issue. Refer to cisco-sa-20150310-ssl (http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150310-ssl) to obtain additional details.
+ Patch: 
+Following are links for downloading patches to fix the vulnerabilities:
+  cisco-sa-20150310-ssl: CISCO IOS (http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150310-ssl)",,,"OS obtained: Cisco IOS Software, UC500 Software (UC500-ADVIPSERVICESK9-M), Version 15.1(4)M6, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport#",yes,,,Hardware
+BU - 1 - abc.acme.com,192.168.4.131,COMPUTER390xyz.acme.com,,IP,Windows Vista / Windows 2008,"host scanned, found vuln",43434,Cisco IOS Openssl Multiple Vulnerabilities (cisco-sa-20140605-openssl),New,Vuln,4,,,,,2/13/2014 8:00,2/13/2014 8:00,1,,"CVE-2014-0076, CVE-2014-0195, CVE-2014-0221, CVE-2014-0224, CVE-2010-5298, CVE-2014-0198, CVE-2014-3470",cisco-sa-20140605-openssl,"66363, 67898, 66801, 67193, 67900, 67901","Some Cisco Internetwork Operating System (IOS) releases include a version of openssl that is affected by the following vulnerabilities:
+1. DTLS invalid fragment vulnerability  
+2. DTLS recursion flaw  
+3. SSL/TLS MITM vulnerability","Successful exploitation of these vulnerabilities may allow an attacker to perform a man-in-the-middle attack, create a denial of service condition, disclose sensitive information, or execute arbitrary code with elevated privileges.","The vendor has released fixes to resolve this issue. Refer to cisco-sa-20140605-openssl (http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140605-openssl) to obtain additional details.
+ Patch: 
+Following are links for downloading patches to fix the vulnerabilities:
+  cisco-sa-20140605-openssl: Cisco IOS (http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140605-openssl)","Source: Core Security
+Reference:CVE-2014-0224
+Description:OpenSSL ChangeCipherSpec Message Vulnerability Checker - Core Security Category : Exploits/Remote
+Reference:CVE-2014-0195
+Description:OpenSSL DTLS Fragment Buffer Overflow DoS - Core Security Category : Denial of Service/Remote
+
+Source: Metasploit
+Reference:CVE-2014-0195
+Description:OpenSSL DTLS Fragment Buffer Overflow DoS - Metasploit Ref : /modules/auxiliary/dos/ssl/dtls_fragment_overflow
+Link:https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/dos/ssl/dtls_fragment_overflow.rb
+Reference:CVE-2014-0224
+Description:OpenSSL Server-Side ChangeCipherSpec Injection Scanner - Metasploit Ref : /modules/auxiliary/scanner/ssl/openssl_ccs
+Link:https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/ssl/openssl_ccs.rb",,"OS obtained: Cisco IOS Software, UC500 Software (UC500-ADVIPSERVICESK9-M), Version 15.1(4)M6, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport#",yes,,,Hardware
+BU - 1 - abc.acme.com,192.168.85.43,,,IP,Cisco IOS 11-15,"host scanned, found vuln",38304,SSH Protocol Version 1 Supported,New,Vuln,4,22,tcp,,,2/12/2014 15:52,2/12/2014 15:52,1,,CVE-2001-1473,,,"SSH1 protocol was deprecated due to multiple vulnerabilities and design flaws.
+Among multiple vulnerabilities that exist in SSH protocol Version 1 are:
+ 
+ a CRC32 compensation attack detector vulnerability (buffer overflow)
+ an unauthorized session key recovery problem
+ 
+Multiple vendors' implementations are vulnerable due to the fact that these are protocol design errors. Version 2 of the SSH protocol fixed these errors.
+ 
+Please refer to the following URL for more information:
+ 
+http://www.kb.cert.org/vuls/id/684820 (http://www.kb.cert.org/vuls/id/684820)","The consequences of vulnerabilities present in SSH Version 1 include:
+ 
+ SSH protected traffic compromise
+ root shell access to the system running SSH server","Disable SSH1 support. See your vendor's Web site for information on how to disable SSH protocol Version 1 support. Some references are provided below: 
+SSH Communications Security (http://www.ssh.com) 
+F-Secure (http://www.f-secure.com) 
+OpenSSH (http://www.openssh.org)
+ 
+ Note:  Do not enable SSH Version 1 Fallback since systems with upgraded versions of SSH and with Fallback Version 1 enabled are still vulnerable.",,,"SSH1 supported	yes
+Supported authentications for SSH1	password
+Supported ciphers for SSH1	des,3des#",yes,,,General remote services
+BU - 1 - abc.acme.com,192.168.84.73,,,IP,Cisco IOS 11-15,"host scanned, found vuln",38695,TLS ROBOT Vulnerability Detected,New,Vuln,4,443,tcp,,over ssl,2/12/2014 18:50,2/12/2014 18:50,1,,"CVE-2017-6168, CVE-2017-17382, CVE-2017-17427, CVE-2017-17428, CVE-2017-12373, CVE-2017-13098, CVE-2017-1000385, CVE-2017-13099, CVE-2016-6883, CVE-2012-5081",ROBOT,"101901, 102197, 102170, 102195, 102174, 102199, 102173, 56071, 99872, 91488, 99848",The TLS vulnerability is also known as Return of Bleichenbacher's Oracle Threat (ROBOT). ROBOT allows an attacker to obtain the RSA key necessary to decrypt TLS traffic under certain conditions.,"An attacker could exploit this vulnerability by sending crafted TLS messages to the device, which would act as an oracle and allow the attacker to carry out a chosen-ciphertext attack.","For updates refer to the robot advisory ROBOT (https://robotattack.org/)
+
+ Patch: 
+Following are links for downloading patches to fix the vulnerabilities:
+  ROBOT (https://robotattack.org/)",,,ROBOT vulnerability found with a weak oracle#,yes,,,General remote services
+BU - 1 - abc.acme.com,192.168.35.211,,,IP,Cisco Adaptive Security Appliance,"host scanned, found vuln",38695,TLS ROBOT Vulnerability Detected,New,Vuln,4,443,tcp,,over ssl,2/13/2014 2:52,2/13/2014 2:52,1,,"CVE-2017-6168, CVE-2017-17382, CVE-2017-17427, CVE-2017-17428, CVE-2017-12373, CVE-2017-13098, CVE-2017-1000385, CVE-2017-13099, CVE-2016-6883, CVE-2012-5081",ROBOT,"101901, 102197, 102170, 102195, 102174, 102199, 102173, 56071, 99872, 91488, 99848",The TLS vulnerability is also known as Return of Bleichenbacher's Oracle Threat (ROBOT). ROBOT allows an attacker to obtain the RSA key necessary to decrypt TLS traffic under certain conditions.,"An attacker could exploit this vulnerability by sending crafted TLS messages to the device, which would act as an oracle and allow the attacker to carry out a chosen-ciphertext attack.","For updates refer to the robot advisory ROBOT (https://robotattack.org/)
+
+ Patch: 
+Following are links for downloading patches to fix the vulnerabilities:
+  ROBOT (https://robotattack.org/)",,,ROBOT vulnerability found with a weak oracle#,yes,,,General remote services
+BU - 1 - abc.acme.com,192.168.201.66,COMPUTER1170xyz.acme.com,,IP,Cisco ASA Version 8.4(1),"host scanned, found vuln",105661,EOL/Obsolete Software: Cisco ASA Software Version 8.0-8.6 Detected,New,Vuln,5,,,,,2/13/2014 7:07,2/13/2014 7:07,1,,,"Cisco ASA version 8.0, Cisco ASA version 8.1, Cisco ASA version 8.2, Cisco ASA version 8.3, Cisco ASA version 8.4, Cisco ASA version 8.6",,"An obsolete version of Cisco ASA was detected on the host. Support for Cisco ASA versions 8.0 through 8.6  ended on November 26, 2013. No further releases or security fixes will be available for Cisco ASA version 8.0 through 8.6.","The system is at high risk of being exposed to security vulnerabilities. Since the vendor no longer provides updates, obsolete software is more vulnerable to viruses and other attacks.",Users are advised to upgrade to the latest version of Cisco ASA. Latest version can be downloaded from here (https://software.cisco.com/download/navigator.html?mdfid=279513386&i=rm).,,,"Cisco ASA Software version detected on port 443 -
+<version who=""sg"">8.4(1)</version>#",yes,,,Security Policy
+BU - 1 - abc.acme.com,192.168.55.31,COMPUTER1180xyz.acme.com,,IP,Cisco ASA Version 8.4(1),"host scanned, found vuln",43469,Cisco ASA Multiple Vulnerabilities (cisco-sa-20150408-asa),New,Vuln,4,,,,,2/13/2014 7:07,2/13/2014 7:07,1,,"CVE-2015-0675, CVE-2015-0676, CVE-2015-0677",cisco-sa-20150408-asa,,"Cisco Adaptive Security Appliance (ASA) Software is affected by the following vulnerabilities:
+ 
+Cisco ASA Failover Command Injection Vulnerability 
+Cisco ASA DNS Memory Exhaustion Vulnerability 
+Cisco ASA VPN XML Parser Denial of Service Vulnerability","Successful exploitation of the Cisco ASA Failover Command Injection Vulnerability would allow an attacker to submit failover commands to the failover units,  which may result in an attacker taking full control of the systems.
+ 
+Successful exploitation of the Cisco ASA DNS Memory Exhaustion Vulnerability may result in system instability and dropped traffic.
+ 
+Successful exploitation of the Cisco ASA VPN XML Parser Denial of Service Vulnerability may result in a crash of the WebVPN process, which may lead to the reset of all SSL VPN connections, system instability, and a reload of the affected system.","Refer to Cisco ASA advisory cisco-sa-20150408-asa (http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150408-asa) for updates and patch information.
+ Patch: 
+Following are links for downloading patches to fix the vulnerabilities:
+  cisco-sa-20150408-asa (http://www.cisco.com/cisco/software/navigator.html)",,,"Cisco ASA Software version detected on port 443 -
+<version who=""sg"">8.4(1)</version>#",yes,,,Hardware
+BU - 1 - abc.acme.com,192.168.200.42,COMPUTER649xyz.acme.com,,IP,Cisco ASA Version 8.4(1),"host scanned, found vuln",43423,Multiple Vulnerabilities in Cisco ASA Software (cisco-sa-20141008-asa),New,Vuln,4,,,,,2/13/2014 7:07,2/13/2014 7:07,1,,"CVE-2014-3382, CVE-2014-3383, CVE-2014-3384, CVE-2014-3385, CVE-2014-3386, CVE-2014-3387, CVE-2014-3388, CVE-2014-3389, CVE-2014-3390, CVE-2014-3391, CVE-2014-3392, CVE-2014-3393, CVE-2014-3394",cisco-sa-20141008-asa,70302,"Cisco ASA is exposed to following multiple vulnerabilities:-  
+Cisco ASA SQL*NET Inspection Engine Denial of Service Vulnerability 
+ 
+Cisco ASA VPN Denial of Service Vulnerability
+ 
+Cisco ASA IKEv2 Denial of Service Vulnerability
+ 
+Cisco ASA Health and Performance Monitor Denial of Service Vulnerability
+ 
+Cisco ASA GPRS Tunneling Protocol Inspection Engine Denial of Service Vulnerability
+ 
+Cisco ASA SunRPC Inspection Engine Denial of Service Vulnerability
+ 
+Cisco ASA DNS Inspection Engine Denial of Service Vulnerability
+ 
+Cisco ASA VPN Failover Command Injection Vulnerability
+ 
+Cisco ASA VNMC Command Input Validation Vulnerability
+ 
+Cisco ASA Local Path Inclusion Vulnerability
+ 
+Cisco ASA Clientless SSL VPN Information Disclosure and Denial of Service Vulnerability
+ 
+Cisco ASA Clientless SSL VPN Portal Customization Integrity Vulnerability
+ 
+Cisco ASA Smart Call Home Digital Certificate Validation Vulnerability","Successful exploitation of the Cisco ASA SQL*NET Inspection Engine Denial of Service Vulnerability, Cisco ASA VPN Denial of Service Vulnerability, Cisco ASA IKEv2 Denial of Service Vulnerability, Cisco ASA Health and Performance Monitor Denial of Service Vulnerability, Cisco ASA GPRS Tunneling Protocol Inspection Engine Denial of Service Vulnerability, Cisco ASA SunRPC Inspection Engine Denial of Service Vulnerability, and Cisco ASA DNS Inspection Engine Denial of Service Vulnerability may result in a reload of an affected device, leading to a denial of service (DoS) condition.
+ 
+Successful exploitation of the Cisco ASA VPN Failover Command Injection Vulnerability, Cisco ASA VNMC Command Input Validation Vulnerability, and Cisco ASA Local Path Inclusion Vulnerability may result in the full compromise of the affected system.
+ 
+Successful exploitation of the Cisco ASA Clientless SSL VPN Information Disclosure and Denial of Service Vulnerability may result in the disclosure of internal information or, in some cases, in a reload of the affected system.
+ 
+Successful exploitation of the Cisco ASA Clientless SSL VPN Portal Customization Integrity Vulnerability may result in a compromise of the Clientless SSL VPN portal which may lead to several types of attacks, which are not limited to cross-site scripting (XSS), stealing of credentials, and redirects of users to malicious web pages.
+ 
+Successful exploitation of the Cisco ASA Smart Call Home Digital Certificate Validation Vulnerability may result in a digital certificate validation bypass, which, in some cases, could allow the attacker access to bypass digital certificate authentication and gain access inside the network via remote access VPN or management access to the affected system via the Cisco Adaptive Security Device Management (ASDM).","Refer to Cisco advisory cisco-sa-20141008-asa (http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20141008-asa) for upgrades and further information. 
+ Patch: 
+Following are links for downloading patches to fix the vulnerabilities:
+  cisco-sa-20141008-asa (http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20141008-asa)",,,"Cisco ASA Software version detected on port 443 -
+<version who=""sg"">8.4(1)</version>#",yes,,,Hardware
+BU - 1 - abc.acme.com,192.168.92.95,COMPUTER1044xyz.acme.com,,IP,Cisco ASA Version 8.4(1),"host scanned, found vuln",38695,TLS ROBOT Vulnerability Detected,New,Vuln,4,443,tcp,,over ssl,2/13/2014 7:07,2/13/2014 7:07,1,,"CVE-2017-6168, CVE-2017-17382, CVE-2017-17427, CVE-2017-17428, CVE-2017-12373, CVE-2017-13098, CVE-2017-1000385, CVE-2017-13099, CVE-2016-6883, CVE-2012-5081",ROBOT,"101901, 102197, 102170, 102195, 102174, 102199, 102173, 56071, 99872, 91488, 99848",The TLS vulnerability is also known as Return of Bleichenbacher's Oracle Threat (ROBOT). ROBOT allows an attacker to obtain the RSA key necessary to decrypt TLS traffic under certain conditions.,"An attacker could exploit this vulnerability by sending crafted TLS messages to the device, which would act as an oracle and allow the attacker to carry out a chosen-ciphertext attack.","For updates refer to the robot advisory ROBOT (https://robotattack.org/)
+
+ Patch: 
+Following are links for downloading patches to fix the vulnerabilities:
+  ROBOT (https://robotattack.org/)",,,ROBOT vulnerability found with a weak oracle#,yes,,,General remote services
+BU - 1 - abc.acme.com,192.168.168.105,,,IP,F5 Networks Big-IP,"host scanned, found vuln",38695,TLS ROBOT Vulnerability Detected,New,Vuln,4,443,tcp,,over ssl,2/13/2014 6:50,2/13/2014 6:50,1,,"CVE-2017-6168, CVE-2017-17382, CVE-2017-17427, CVE-2017-17428, CVE-2017-12373, CVE-2017-13098, CVE-2017-1000385, CVE-2017-13099, CVE-2016-6883, CVE-2012-5081",ROBOT,"101901, 102197, 102170, 102195, 102174, 102199, 102173, 56071, 99872, 91488, 99848",The TLS vulnerability is also known as Return of Bleichenbacher's Oracle Threat (ROBOT). ROBOT allows an attacker to obtain the RSA key necessary to decrypt TLS traffic under certain conditions.,"An attacker could exploit this vulnerability by sending crafted TLS messages to the device, which would act as an oracle and allow the attacker to carry out a chosen-ciphertext attack.","For updates refer to the robot advisory ROBOT (https://robotattack.org/)
+
+ Patch: 
+Following are links for downloading patches to fix the vulnerabilities:
+  ROBOT (https://robotattack.org/)",,,ROBOT vulnerability found with a weak oracle#,yes,,,General remote services
+BU - 1 - abc.acme.com,192.168.204.139,,,IP,F5 Networks Big-IP,"host scanned, found vuln",105651,EOL/Obsolete Software: OpenSSL 0.9.8/1.0.0 Detected,New,Vuln,5,,,,,2/13/2014 6:36,2/13/2014 6:36,1,,,OpenSSL End of Life Policy,,An obsolete version of OpenSSL was detected on the host. Support for version 0.9.8 and 1.0.0 ended on 2015-12-31. No further releases or security fixes will be available for OpenSSL version 0.9.8 and OpenSSL version 1.0.0.,"The system is at high risk of being exposed to security vulnerabilities. Since the vendor no longer provides updates, obsolete software is more vulnerable to viruses and other attacks.",Customers are advised to upgrade to the latest supported version of OpenSSL. Refer to OpenSSL Downloads (https://www.openssl.org/source/) for more details.,,,"EOL/Obsolete version of OpenSSL was detected on port 80 over TCP - 
+Date: Wed, 14 Feb 2018 10:57:33 GMT
+Server: Apache/2.4.4 (Win32) OpenSSL/0.9.8zb-fips mod_jk/1.2.37
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1
+
+Server Error. The server was unable to process your request.EOL/Obsolete version of OpenSSL was detected on port 443 over TCP - 
+Date: Wed, 14 Feb 2018 11:17:05 GMT
+Server: Apache/2.4.4 (Win32) OpenSSL/0.9.8zb-fips mod_jk/1.2.37
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1
+
+Server Error. The server was unable to process your request.#",yes,,,Security Policy
+BU - 1 - abc.acme.com,192.168.173.236,,,IP,F5 Networks Big-IP,"host scanned, found vuln",38605,SSL/TLS Server Factoring RSA Export Keys (FREAK) vulnerability,New,Vuln,4,443,tcp,,over ssl,2/13/2014 6:36,2/13/2014 6:36,1,,CVE-2015-0204,,"71936, 91787","The remote SSL/TLS server is vulnerable to FREAK attack when:
+1.The ""RSA+EXPORT"" ciphers are supported; 
+2.The size of the RSA public key in certificate is not stronger than 1024; 
+3.The temporary RSA key size is less than 1024; 
+4.The temporary RSA key is stable(used multiple times);  
+
+Only SSLv3 and TLSv1 are potentially vulnerable",Exploitation allows an attacker to bypass security restrictions on the targeted host.,"Disable RSA_EXPORT cipher suites. 
+Do not use temporary RSA key multiple times",,,"Public key source	key size
+Public key in certificate	2048(bits)
+Temporary RSA key	512(bits)#",yes,,,General remote services
+BU - 1 - abc.acme.com,192.168.60.178,,,IP,F5 Networks Big-IP,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/13/2014 4:31,2/13/2014 4:31,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv3 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
+BU - 1 - abc.acme.com,192.168.53.106,,,IP,F5 Networks Big-IP,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/13/2014 2:43,2/13/2014 2:43,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
+BU - 2 - abc.acme.com,192.168.135.8,,,IP,F5 Networks Big-IP,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/13/2014 0:50,2/13/2014 0:50,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv3 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
+BU - 2 - abc.acme.com,192.168.87.24,,,IP,Ubuntu / Tiny Core Linux / Linux 2.6.x,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/12/2014 21:35,2/12/2014 21:35,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv3 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
+BU - 2 - abc.acme.com,192.168.147.82,,,IP,Ubuntu / Tiny Core Linux / Linux 2.6.x,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/12/2014 22:41,2/12/2014 22:41,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv3 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
+BU - 2 - abc.acme.com,192.168.102.37,,,IP,Ubuntu / Tiny Core Linux / Linux 2.6.x,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/13/2014 4:03,2/13/2014 4:03,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv3 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
+BU - 2 - abc.acme.com,192.168.166.104,,,IP,Ubuntu / Tiny Core Linux / Linux 2.6.x,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/13/2014 2:20,2/13/2014 2:20,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv3 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
+BU - 2 - abc.acme.com,192.168.183.39,,,IP,Ubuntu / Tiny Core Linux / Linux 2.6.x,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/13/2014 5:08,2/13/2014 5:08,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv3 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
+BU - 2 - abc.acme.com,192.168.207.89,,,IP,Ubuntu / Tiny Core Linux / Linux 2.6.x,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/13/2014 0:11,2/13/2014 0:11,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv3 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
+BU - 2 - abc.acme.com,192.168.14.31,,,IP,Ubuntu / Tiny Core Linux / Linux 2.6.x,"host scanned, found vuln",38142,SSL Server Allows Anonymous Authentication Vulnerability,New,Vuln,4,443,tcp,,over ssl,2/12/2014 21:48,2/12/2014 21:48,1,,,,,"The Secure Socket Layer (SSL) protocol allows for secure communication between a client and a server. The client usually authenticates the server using an algorithm like RSA or DSS. Some SSL ciphers allow SSL communication without authentication. Most common Web browsers like Microsoft Internet Explorer, Netscape and Mozilla do not use anonymous authentication ciphers by default.
+
+ A vulnerability exists in SSL communications when clients are allowed to connect
+using no authentication algorithm. SSL client-server communication may use several different types of
+authentication: RSA, Diffie-Hellman, DSS or none. When 'none' is used, the
+communications are vulnerable to a man-in-the-middle attack.""",An attacker can exploit this vulnerability to impersonate your server to clients.,"Disable support for anonymous authentication. 
+ 1) How to disable for Apache: 
+ Typically, for Apache/mod_ssl, httpd.conf or ssl.conf should have the following lines: 
+SSLProtocol -ALL +SSLv3 +TLSv1 
+SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM  
+For Apache/apache_ssl include the following line in the configuration file (httpsd.conf): 
+SSLRequireCipher ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM 
+  2) IIS: 
+ For IIS please see: How to disable PCT 1.0, SSL 2.0, SSL 3.0, or TLS 1.0 in Internet Information Services (http://support.microsoft.com/kb/187498/en-us), How to Restrict the Use of Certain Cryptographic Algorithms and Protocols in Schannel.dll (http://support.microsoft.com/kb/245030/en-us), How to Determine the Cipher Suite for the Server and Client (http://support.microsoft.com/kb/299520/en-us), , and How to restrict the use of certain ciphers in Internet Information Services 5.0 (http://support.microsoft.com/kb/241447)
+ 
+ 3) Wu-FTP: 
+For Wu-FTP which supports TLS, the ciphers parameter in TLS configuration file should be set to -ALL +SSLv3 +TLSv1  For more details please consult the docs/HOWTO/ssl_and_tls_ftpd.HOWTO  file provided by wu-ftpd distribution.
+ 
+ 4) Lighttpd: 
+For lighttpd: Locate the lighttpd config file and modify the following  ssl.ciper-list line to include !aNULL.  A restart of the lightttpd application is necessary. 
+Example: ssl.cipher-list = ""TLSv1+HIGH !SSLv2 RC4+MEDIUM !aNULL !eNULL !3DES @STRENGTH""
+
+ 
+ It is recommended that you follow SSL best security practices: 
+ SSL and TLS Deployment Best Practices (https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+ http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html (http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_1-1/ssl.html)
+ http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite (http://httpd.apache.org/docs/2.0/mod/mod_ssl.html#sslciphersuite)
+ http://www.megasecurity.org/Info/ssl_servers.html (http://www.megasecurity.org/Info/ssl_servers.html)",,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv3 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.1 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH
+TLSv1.2 SUPPORTS CIPHERS WITH NO AUTHENTICATION	 	 	 	 	 
+AECDH-RC4-SHA	ECDH	None	SHA1	RC4(128)	MEDIUM
+AECDH-DES-CBC3-SHA	ECDH	None	SHA1	3DES(168)	MEDIUM
+AECDH-AES128-SHA	ECDH	None	SHA1	AES(128)	MEDIUM
+AECDH-AES256-SHA	ECDH	None	SHA1	AES(256)	HIGH#",yes,,,General remote services
